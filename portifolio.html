@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namatovu Christine Maria | Senior Software Engineer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              light: '#38bdf8',
+              DEFAULT: '#0ea5e9',
+              dark: '#0284c7'
+            },
+            secondary: {
+              light: '#fdba74',
+              DEFAULT: '#f97316',
+              dark: '#ea580c'
+            }
+          },
+          animation: {
+            'float': 'float 4s ease-in-out infinite',
+            'wave': 'wave 2.5s linear infinite',
+            'gradient': 'gradient 8s ease infinite',
+            'text-gradient': 'text-gradient 4s ease infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0) rotate(-1deg)' },
+              '50%': { transform: 'translateY(-12px) rotate(1deg)' }
+            },
+            wave: {
+              '0%': { transform: 'rotate(0deg)' },
+              '10%': { transform: 'rotate(16deg)' },
+              '20%': { transform: 'rotate(-10deg)' },
+              '30%': { transform: 'rotate(16deg)' },
+              '40%': { transform: 'rotate(-6deg)' },
+              '50%': { transform: 'rotate(12deg)' },
+              '60%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(0deg)' }
+            },
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' }
+            },
+            'text-gradient': {
+              '0%, 100%': {
+                'background-size': '200% 200%',
+                'background-position': 'left center'
+              },
+              '50%': {
+                'background-size': '200% 200%',
+                'background-position': 'right center'
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .heading-font {
+      font-family: 'Playfair Display', serif;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+      background-size: 200% 200%;
+    }
+    .profile-pic {
+      border: 6px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.3);
+    }
+    .project-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    }
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.2);
+    }
+    .gallery-item {
+      transition: all 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #0ea5e9, #f97316, #38bdf8);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glow {
+      filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.4));
+    }
+    .glow-secondary {
+      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.4));
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .skill-bar {
+      height: 6px;
+      border-radius: 3px;
+    }
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 24px;
+      height: calc(100% - 24px);
+      width: 2px;
+      background: #e2e8f0;
+    }
+    .testimonial-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .blog-card {
+      transition: all 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(14, 165, 233, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300">
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+    <div class="relative w-24 h-24">
+      <div class="absolute inset-0 rounded-full border-4 border-t-primary border-r-secondary border-b-primary border-l-secondary animate-spin"></div>
+      <div class="absolute inset-4 rounded-full border-4 border-t-secondary border-r-primary border-b-secondary border-l-primary animate-spin animation-delay-200"></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-40 glass-effect shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary flex items-center">
+        <span class="text-gradient bg-clip-text">Christine</span>
+        <span class="ml-2 w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      </a>
+      <div class="flex items-center gap-8">
+        <a href="#about" class="text-gray-600 hover:text-primary transition font-medium">About</a>
+        <a href="#experience" class="text-gray-600 hover:text-primary transition font-medium">Experience</a>
+        <a href="#projects" class="text-gray-600 hover:text-primary transition font-medium">Projects</a>
+        <a href="#blog" class="text-gray-600 hover:text-primary transition font-medium">Blog</a>
+        <a href="#contact" class="text-gray-600 hover:text-primary transition font-medium">Contact</a>
+        <a href="resume.html" download class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-dark transition flex items-center gap-2">
+          <i class="fas fa-download"></i> Resume
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center gradient-bg text-white pt-20 px-6 animate-gradient">
+    <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div class="text-center lg:text-left max-w-2xl relative z-10">
+        <div class="mb-8">
+          <span class="text-xl md:text-2xl mb-3 block font-medium">Hello there! <span class="animate-wave inline-block origin-[70%_70%]">👋</span></span>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 heading-font">
+            I'm <span class="text-white">Christine Maria</span>
+          </h1>
+          <div class="text-xl md:text-2xl mb-8">
+            <span class="typing-animation font-medium"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+          <p class="text-lg opacity-90 max-w-lg">Senior Front-End Developer & Software Engineering student at Makerere University crafting exceptional digital experiences with cutting-edge technologies.</p>
+        </div>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+          <a href="#projects" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            View Portfolio <i class="fas fa-arrow-down ml-2"></i>
+          </a>
+          <a href="#contact" class="border-2 border-white/50 text-white px-8 py-3 rounded-full hover:bg-white hover:text-primary transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            Contact Me <i class="fas fa-paper-plane ml-2"></i>
+          </a>
+        </div>
+        
+        <div class="mt-12 flex justify-center lg:justify-start gap-6">
+          <a href="https://www.linkedin.com/in/christine-namatovu-4414272b2/" class="text-white hover:text-secondary transition text-xl">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/NamatovuChristineMaria123" class="text-white hover:text-secondary transition text-xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://x.com/n92120christine?s=11" class="text-white hover:text-secondary transition text-xl">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Profile Picture -->
+      <div class="relative mt-12 lg:mt-0 animate-float">
+        <div class="profile-pic w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gray-200 relative z-10">
+          <img src="images/dp.jpg" 
+               alt="Christine Maria" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -inset-6 bg-white/20 rounded-full animate-pulse"></div>
+        
+        <!-- Floating elements -->
+        <div class="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-secondary/20 backdrop-blur-sm border-2 border-secondary/30 animate-float animation-delay-2000"></div>
+        <div class="absolute -bottom-8 -right-8 w-20 h-20 rounded-full bg-primary/20 backdrop-blur-sm border-2 border-primary/30 animate-float animation-delay-1000"></div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      <a href="#about" class="animate-bounce block">
+        <i class="fas fa-chevron-down text-2xl text-white/80 hover:text-white transition"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center p-6">
+          <div class="text-4xl font-bold text-primary mb-2 heading-font">2+</div>
+          <div class="text-gray-600">Years Experience</div>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-4xl font-bold text-primary mb-2 heading-font">10+</div>
+          <div class="text-gray-600">Projects Completed</div>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-4xl font-bold text-primary mb-2 heading-font">15+</div>
+          <div class="text-gray-600">Happy Clients</div>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-4xl font-bold text-primary mb-2 heading-font">3+</div>
+          <div class="text-gray-600">Awards Won</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <span class="text-primary font-medium mb-3 block">GET TO KNOW ME</span>
+      <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">About Me</h2>
+      <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <h3 class="text-2xl font-semibold mb-6 text-gray-800 heading-font">Who is Christine?</h3>
+        <p class="mb-6 text-gray-600 leading-relaxed">
+          I'm <span class="text-primary font-medium">Namatovu Christine Maria</span>, a passionate Software Engineer specializing in front-end development with a keen eye for design and user experience. Currently pursuing my degree at Makerere University while working as a senior developer.
+        </p>
+        <p class="mb-6 text-gray-600 leading-relaxed">
+          My academic journey began at Wampewo Ntake SS where I excelled with 18 points at A-Level, earning a prestigious government sponsorship to pursue my passion for technology (Software Engineering) at Makerere University.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Beyond coding, I'm an avid reader, tech community enthusiast, and lifelong learner constantly exploring new frameworks and design paradigms to create innovative solutions.
+        </p>
+        
+        <div class="mt-10">
+          <a href="#contact" class="inline-flex items-center text-primary font-medium group">
+            Let's Connect
+            <span class="ml-2 group-hover:translate-x-1 transition-transform">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Skills -->
+      <div class="order-1 lg:order-2">
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+          <h3 class="text-xl font-semibold mb-6 text-gray-800 heading-font">My Skills</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-600">HTML5 & CSS3</span>
+                <span class="text-primary">97%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-primary to-primary-light h-2.5 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-600">JavaScript</span>
+                <span class="text-primary">88%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-primary to-primary-light h-2.5 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-600">Bootstrap</span>
+                <span class="text-primary">95%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-primary to-primary-light h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-600">UI/UX Design</span>
+                <span class="text-primary">92%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div class="bg-gradient-to-r from-primary to-primary-light h-2.5 rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-primary font-medium mb-3 block">WHAT I OFFER</span>
+        <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">My Services</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/30 transition">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary text-2xl">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 heading-font">Web Development</h3>
+          <p class="text-gray-600">Custom, responsive websites built with modern technologies for optimal performance and user experience.</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/30 transition">
+          <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary text-2xl">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 heading-font">UI/UX Design</h3>
+          <p class="text-gray-600">Beautiful, intuitive interfaces designed with user psychology and business goals in mind.</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/30 transition">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 text-primary text-2xl">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 heading-font">Mobile Development</h3>
+          <p class="text-gray-600">Cross-platform mobile applications that work seamlessly across iOS and Android devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Experience & Education Section -->
+<section id="experience" class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <span class="text-primary font-medium mb-3 block">MY JOURNEY</span>
+      <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Experience & Education</h2>
+      <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Experience -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 text-gray-800 heading-font flex items-center">
+          <i class="fas fa-briefcase text-secondary mr-4"></i>
+          Experience
+        </h3>
+        
+        <div class="space-y-8 relative pl-10 border-l-2 border-gray-200">
+          <!-- Experience 1 -->
+          <div class="relative timeline-item">
+            <div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white z-10"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-800">Senior Front-End Developer</h4>
+              <p class="text-sm text-secondary mb-2">CustoSpark Co Ltd | 2024 - Present</p>
+              <p class="text-gray-600">Leading front-end development initiatives, implementing modern frameworks, and mentoring junior developers in best practices.</p>
+            </div>
+          </div>
+          
+          <!-- Experience 2 -->
+          <div class="relative timeline-item">
+            <div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white z-10"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-800">Co-Founder & CTO</h4>
+              <p class="text-sm text-secondary mb-2">CustoSpark Co Ltd | 2023 - Present</p>
+              <p class="text-gray-600">I'm honored to be the Co-Founder & CTO of Custospark, where I drive innovation and shape the company's technical direction.</p>
+            </div>
+          </div>
+
+          <!-- Experience 3 - Freshway Supermarket -->
+          <div class="relative timeline-item">
+            <div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white z-10"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-800">Assistant Manager</h4>
+              <p class="text-sm text-secondary mb-2">Freshway Supermarket | 2022 - 2023</p>
+              <p class="text-gray-600">Progressed from attendant to cashier to assistant manager, demonstrating leadership, customer service excellence, and operational management skills in a fast-paced retail environment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Education -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-8 text-gray-800 heading-font flex items-center">
+          <i class="fas fa-graduation-cap text-secondary mr-4"></i>
+          Education
+        </h3>
+        
+        <div class="space-y-8 relative pl-10 border-l-2 border-gray-200">
+          <!-- Education 1 -->
+          <div class="relative timeline-item">
+            <div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white z-10"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-800">BSc. Software Engineering</h4>
+              <p class="text-sm text-secondary mb-2">Makerere University | 2023 - Present</p>
+              <p class="text-gray-600">Government sponsored student pursuing a degree in Software Engineering with focus on modern development practices.</p>
+            </div>
+          </div>
+          
+          <!-- Education 2 -->
+          <div class="relative timeline-item">
+            <div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white z-10"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-800">Front-End Development Certification</h4>
+              <p class="text-sm text-secondary mb-2">Kanzu Code Foundation | 2023</p>
+              <p class="text-gray-600">Completed intensive training in modern front-end technologies including DaisyUi, Tailwind CSS, and responsive design.</p>
+            </div>
+          </div>
+          
+          <!-- Education 3 -->
+          <div class="relative timeline-item">
+            <div class="absolute -left-10 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white z-10"></div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+              <h4 class="font-semibold text-lg text-gray-800">Advanced Level Education</h4>
+              <p class="text-sm text-secondary mb-2">Wampewo Ntake SS | 2020 - 2022</p>
+              <p class="text-gray-600">Graduated with 18 points , earning a government sponsorship for university education.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-24 px-6 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <span class="text-primary font-medium mb-3 block">MY CREDENTIALS</span>
+      <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Certifications</h2>
+      <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Validation of my expertise through rigorous training programs and assessments</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+        <h3 class="text-2xl font-semibold mb-6 text-gray-800 heading-font">Front-End Development Certification</h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Completed an intensive front-end development program at Kanzu Code Foundation, mastering modern web technologies including HTML5, CSS3, JavaScript (ES6+), and responsive design principles.
+        </p>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+          The program emphasized hands-on project work, resulting in portfolio-ready applications that demonstrate proficiency in component-based architecture, state management, and performance optimization.
+        </p>
+        
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">HTML5/CSS3</span>
+          <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+          <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Responsive Design</span>
+          <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">UI/UX Principles</span>
+        </div>
+        
+        <div class="mt-10">
+          <a href="#" class="inline-flex items-center text-primary font-medium group">
+            View Certificate
+            <span class="ml-2 group-hover:translate-x-1 transition-transform">
+              <i class="fas fa-external-link-alt"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Certificate Photo - Modified to match team section -->
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200 gallery-item">
+        <img src="images/certi2.jpg" 
+             alt="Kanzu Code Certificate" 
+             class="w-full h-96 object-cover transition duration-500">
+        <div class="p-6 bg-white">
+          <div class="flex justify-between items-center">
+            <p class="text-sm text-gray-600">Issued: June 2023</p>
+            <span class="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full">Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Team Section -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <span class="text-primary font-medium mb-3 block">COLLABORATION</span>
+        <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Development Team</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Working with talented professionals at Custospark to build innovative solutions</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Team Photo -->
+        <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200 gallery-item">
+          <img src="images/team10.jpg" 
+               alt="Development Team at Kanzu Code" 
+               class="w-full h-96 object-cover transition duration-500">
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+          <h3 class="text-2xl font-semibold mb-6 text-gray-800 heading-font">Team Synergy</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Collaborating with my team at CustoSpark provided invaluable experience in agile development, code reviews, and collaborative problem-solving. Together we delivered complex projects with tight deadlines while maintaining code quality.
+          </p>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Our team dynamic emphasized knowledge sharing, continuous improvement, and creating solutions that balance technical excellence with business objectives.
+          </p>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Agile Methodology</span>
+            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Git Workflow</span>
+            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Code Reviews</span>
+            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Pair Programming</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Community Section -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <span class="text-primary font-medium mb-3 block">COMMUNITY</span>
+        <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Tech Events & Conferences</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Engaging with Uganda's vibrant technology ecosystem</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event 1 -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 hover:shadow-2xl transition gallery-item">
+          <div class="h-64 overflow-hidden">
+            <img src="images/dev.jpg" 
+                 alt="UG Dev Summit 2023" 
+                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition">
+            <div>
+              <h3 class="text-white text-xl font-semibold mb-2">UG Dev Summit 2024</h3>
+              <p class="text-gray-300 text-sm">Attended workshops on modern web innovations and cloud technologies</p>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="font-semibold text-lg text-gray-800">UG Dev Summit 2024</h3>
+            <p class="text-sm text-gray-600">Kampala, Uganda</p>
+          </div>
+        </div>
+        
+        <!-- Event 2 -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 hover:shadow-2xl transition gallery-item">
+          <div class="h-64 overflow-hidden">
+            <img src="images/three.jpg" 
+                 alt="Tech Workshop" 
+                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition">
+            <div>
+              <h3 class="text-white text-xl font-semibold mb-2">Kanzu Code Foundation</h3>
+              <p class="text-gray-300 text-sm">Participated in coding challenges and hackathons</p>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="font-semibold text-lg text-gray-800">Kanzu Code Workshop</h3>
+            <p class="text-sm text-gray-600">Kampala, Uganda</p>
+          </div>
+        </div>
+        
+        <!-- Event 3 -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 hover:shadow-2xl transition gallery-item">
+          <div class="h-64 overflow-hidden">
+            <img src="images/dev2.jpg" 
+                 alt="Workshop" 
+                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition">
+            <div>
+              <h3 class="text-white text-xl font-semibold mb-2">Cloud Computing Day</h3>
+              <p class="text-gray-300 text-sm">Deep dive into AWS and Azure cloud platforms</p>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="font-semibold text-lg text-gray-800">Cloud Computing Day</h3>
+            <p class="text-sm text-gray-600">UG Dev Summit 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <span class="text-primary font-medium mb-3 block">MY WORK</span>
+        <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Featured Projects</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">A selection of my recent work showcasing technical expertise and creative solutions</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="relative h-60 overflow-hidden">
+            <img src="images/image.png" 
+                 alt="E-commerce Project" 
+                 class="w-full h-full object-cover transition duration-500">
+            <button class="project-view-btn absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition"
+                    data-project='{"title":"CustoSell E-Commerce Platform","description":"A full-featured hostel management system with smart room search, secure payments, and real-time chat for seamless tenant and admin interaction. Built with PHP, Bootstrap, and MySql.","image":"images/sell.png","github":"#","liveDemo":"#"}'>
+              <i class="fas fa-expand text-white text-3xl"></i>
+            </button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Hostel Management System</h3>
+            <p class="text-gray-600 mb-4">A modern solution for managing hostel bookings, payments, and tenant support.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">PHP</span>
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Bootstrap</span>
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">MySql</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="https://lighthearted-crostata-c2496c.netlify.app/" class="text-primary hover:underline flex items-center text-sm">
+                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="relative h-60 overflow-hidden">
+            <img src="images/josa.png" 
+                 alt="Student Management System" 
+                 class="w-full h-full object-cover transition duration-500">
+            <button class="project-view-btn absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition"
+                    data-project='{"title":"JOSA Alumni Network","description":"Comprehensive platform connecting Jerusser SS alumni with event management, mentorship programs, and career networking features. Implemented with Vue.js and Firebase.","image":"images/josa.png","github":"#","liveDemo":"#"}'>
+              <i class="fas fa-expand text-white text-3xl"></i>
+            </button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">JOSA Alumni</h3>
+            <p class="text-gray-600 mb-4">Networking platform for Jerusser SS alumni with event management.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Bootstrap</span>
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">JavaScript</span>
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="https://cool-marigold-d5b5d1.netlify.app/" class="text-primary hover:underline flex items-center text-sm">
+                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 border border-gray-100">
+          <div class="relative h-60 overflow-hidden">
+            <img src="images/cust2.png" 
+                 alt="Portfolio Website" 
+                 class="w-full h-full object-cover transition duration-500">
+            <button class="project-view-btn absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition"
+                    data-project='{"title":"CustoSpark Company Website","description":"Corporate website for CustoSpark Co Ltd featuring service showcases, client testimonials, and interactive elements. Built with Next.js for optimal performance and SEO.","image":"images/cust2.png","github":"#","liveDemo":"#"}'>
+              <i class="fas fa-expand text-white text-3xl"></i>
+            </button>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">CustoSpark Co</h3>
+            <p class="text-gray-600 mb-4">Corporate website with service showcases and client portal.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">PHP</span>
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Bootstrap</span>
+              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">MySql</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="https://custospark.com/" class="text-primary hover:underline flex items-center text-sm">
+                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16">
+        <a href="https://github.com/NamatovuChristineMaria123" class="inline-flex items-center justify-center px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition duration-300">
+          View All Projects
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- Testimonials Section -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <span class="text-primary font-medium mb-3 block">CLIENT FEEDBACK</span>
+      <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Testimonials</h2>
+      <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="testimonial-card p-8 rounded-2xl">
+        <div class="flex items-center mb-6">
+          <img src="images/Magie.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Nabukeera Margret</h4>
+            <p class="text-sm text-gray-600">Manager, Kiwe Investments</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">"Christine transformed our outdated website into a modern, responsive platform that increased our conversions by 40%. Her attention to detail and creative solutions were impressive."</p>
+        <div class="flex text-yellow-400">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+      
+      <div class="testimonial-card p-8 rounded-2xl">
+        <div class="flex items-center mb-6">
+          <img src="images/ceo.png" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Opiyo Oscar</h4>
+            <p class="text-sm text-gray-600">CEO, Custospark Co Ltd</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">"Working with Christine was a game-changer for our e-commerce project. She delivered ahead of schedule and implemented features we hadn't even considered but proved invaluable."</p>
+        <div class="flex text-yellow-400">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+      
+      <div class="testimonial-card p-8 rounded-2xl">
+        <div class="flex items-center mb-6">
+          <img src="images/Sir steve.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Alibu Stephen</h4>
+            <p class="text-sm text-gray-600">Owner, Fresh Way Supermarket</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">"Christine demonstrated exceptional leadership and organizational skills during her time at Fresh Way Supermarket. Her progression from attendant to cashier to assistant manager was a testament to her dedication and problem-solving abilities."</p>
+        <div class="flex text-yellow-400">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <span class="text-primary font-medium mb-3 block">LATEST ARTICLES</span>
+        <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">My Blog</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Sharing insights on web development, design trends, and tech innovations</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="h-48 overflow-hidden">
+            <img src="images/blog1.png" alt="Blog Post" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <span>June 24, 2025</span>
+              <span class="mx-2">•</span>
+              <span>3 min read</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 heading-font">The Future of Bootstrap in 2025</h3>
+            <p class="text-gray-600 mb-4">Exploring the latest features and trends in Bootstrap development and how they're changing the front-end landscape.</p>
+            <a href="https://medium.com/@christinenamatovu79?source=post_page---byline--93abb043abde---------------------------------------" class="text-primary font-medium inline-flex items-center group">
+              Read More
+              <span class="ml-2 group-hover:translate-x-1 transition-transform">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="h-48 overflow-hidden">
+            <img src="images/blog2.png" alt="Blog Post" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <span>May 28, 2024</span>
+              <span class="mx-2">•</span>
+              <span>7 min read</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 heading-font">Accessibility in Web Design</h3>
+            <p class="text-gray-600 mb-4">Why accessibility matters and practical tips to make your websites more inclusive for all users.</p>
+            <a href="https://medium.com/@christinenamatovu79?source=post_page---byline--93abb043abde---------------------------------------" class="text-primary font-medium inline-flex items-center group">
+              Read More
+              <span class="ml-2 group-hover:translate-x-1 transition-transform">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="h-48 overflow-hidden">
+            <img src="images/blog3.png" alt="Blog Post" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-3">
+              <span>April 10, 2024</span>
+              <span class="mx-2">•</span>
+              <span>4 min read</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 heading-font">Building Scalable CSS</h3>
+            <p class="text-gray-600 mb-4">Strategies for writing maintainable, scalable CSS in large projects using modern methodologies.</p>
+            <a href="https://medium.com/@christinenamatovu79?source=post_page---byline--93abb043abde---------------------------------------" class="text-primary font-medium inline-flex items-center group">
+              Read More
+              <span class="ml-2 group-hover:translate-x-1 transition-transform">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16">
+        <a href="https://medium.com/@christinenamatovu79?source=post_page---byline--76e53278e85a---------------------------------------" class="inline-flex items-center justify-center px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition duration-300">
+          View All Articles
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hackathons Section -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <span class="text-primary font-medium mb-3 block">ACHIEVEMENTS</span>
+        <h2 class="text-4xl font-bold mb-4 text-gray-800 heading-font">Hackathons & Awards</h2>
+        <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Recognitions for technical excellence and innovative problem-solving</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Badge 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 text-center">
+          <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary text-3xl">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Makon Hack 2024</h4>
+          <p class="text-gray-600">Participated in 48-hour coding marathon developing solutions for education technology.</p>
+        </div>
+        
+        <!-- Badge 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 text-center">
+          <div class="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-6 text-secondary text-3xl">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Best UI Design</h4>
+          <p class="text-gray-600">Awarded for exceptional user interface design at CustoSpark Co Ltd internal hackathon.</p>
+        </div>
+        
+        <!-- Badge 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 text-center">
+          <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 text-primary text-3xl">
+            <i class="fas fa-award"></i>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Top 5 Finalist</h4>
+          <p class="text-gray-600">Recognized among top innovators at Spark Sessions 2025.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 bg-gradient-to-br from-primary to-primary-dark text-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <span class="text-white/80 font-medium mb-3 block">LET'S CONNECT</span>
+        <h2 class="text-4xl font-bold mb-4 text-white heading-font">Get In Touch</h2>
+        <div class="w-24 h-1 bg-white mx-auto rounded-full"></div>
+        <p class="text-white/80 mt-6 max-w-2xl mx-auto">I'm currently available for freelance work, collaborations, or interesting opportunities</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold mb-8 text-white heading-font">Contact Information</h3>
+          <p class="mb-8 text-white/90">Feel free to reach out for project inquiries, collaborations, or just to say hello. I'll get back to you as soon as possible.</p>
+          
+          <div class="space-y-6">
+            <div class="flex items-center gap-6">
+              <div class="bg-white/10 p-4 rounded-full backdrop-blur-sm">
+                <i class="fas fa-envelope text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Email</h4>
+                <a href="mailto:christinenamatovu79@gmail.com" class="text-white/80 hover:text-white transition">christinenamatovu79@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-6">
+              <div class="bg-white/10 p-4 rounded-full backdrop-blur-sm">
+                <i class="fas fa-phone text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Phone</h4>
+                <a href="tel:+256741474780" class="text-white/80 hover:text-white transition">+256 741 474 780</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-6">
+              <div class="bg-white/10 p-4 rounded-full backdrop-blur-sm">
+                <i class="fas fa-map-marker-alt text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Location</h4>
+                <p class="text-white/80">Kampala, Uganda</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h4 class="font-semibold mb-6 text-white heading-font">Follow Me</h4>
+            <div class="flex gap-6">
+              <a href="https://www.linkedin.com/in/christine-namatovu-4414272b2/" class="bg-white/10 p-4 rounded-full backdrop-blur-sm hover:bg-white/20 transition text-xl">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/NamatovuChristineMaria123" class="bg-white/10 p-4 rounded-full backdrop-blur-sm hover:bg-white/20 transition text-xl">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://x.com/n92120christine?s=11" class="bg-white/10 p-4 rounded-full backdrop-blur-sm hover:bg-white/20 transition text-xl">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="bg-white p-8 rounded-2xl shadow-2xl">
+          <div id="form-alert" class="hidden mb-6 p-4 rounded-lg"></div>
+          
+          <div class="mb-6">
+            <label for="name" class="block mb-3 text-gray-700 font-medium">Full Name</label>
+            <input type="text" id="name" name="name" required 
+                   class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+          </div>
+          
+          <div class="mb-6">
+            <label for="email" class="block mb-3 text-gray-700 font-medium">Email Address</label>
+            <input type="email" id="email" name="email" required 
+                   class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+          </div>
+          
+          <div class="mb-8">
+            <label for="message" class="block mb-3 text-gray-700 font-medium">Your Message</label>
+            <textarea id="message" name="message" rows="5" required 
+                      class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-lg transition flex items-center justify-center gap-3 font-medium shadow-lg hover:shadow-xl">
+            <span id="submit-text">Send Message</span>
+            <i id="submit-icon" class="fas fa-paper-plane"></i>
+            <i id="loading-icon" class="fas fa-spinner fa-spin hidden"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-6">
+    <div class="relative max-w-5xl w-full">
+      <button id="close-modal" class="absolute -top-12 right-0 text-white text-3xl hover:text-primary transition">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="bg-white rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+        <div class="h-96 overflow-hidden">
+          <img id="modal-image" src="" alt="" class="w-full h-full object-contain">
+        </div>
+        <div class="p-8">
+          <h3 id="modal-title" class="text-2xl font-bold mb-4 text-gray-800 heading-font"></h3>
+          <p id="modal-desc" class="text-gray-600 mb-6 leading-relaxed"></p>
+          <div class="flex gap-6">
+            <a id="modal-github" href="https://github.com/NamatovuChristineMaria123" target="_blank" class="text-primary hover:underline flex items-center font-medium">
+              <i class="fab fa-github mr-3"></i> View Code
+            </a>
+            <a id="modal-live" href="#" target="_blank" class="text-primary hover:underline flex items-center font-medium">
+              <i class="fas fa-external-link-alt mr-3"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div>
+          <a href="#" class="text-2xl font-bold text-white heading-font flex items-center mb-6">
+            <span class="text-gradient bg-clip-text">Christine</span>
+          </a>
+          <p class="mb-6">Building digital experiences that solve real problems and create meaningful impact.</p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/in/christine-namatovu-4414272b2/" class="text-gray-400 hover:text-white transition text-lg">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/NamatovuChristineMaria123" class="text-gray-400 hover:text-white transition text-lg">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/n92120christine?s=11" class="text-gray-400 hover:text-white transition text-lg">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg heading-font">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="#about" class="hover:text-white transition">About</a></li>
+            <li><a href="#experience" class="hover:text-white transition">Experience</a></li>
+            <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+            <li><a href="#blog" class="hover:text-white transition">Blog</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg heading-font">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="hover:text-white transition">Web Development</a></li>
+            <li><a href="#" class="hover:text-white transition">UI/UX Design</a></li>
+            <li><a href="#" class="hover:text-white transition">Front-End Consulting</a></li>
+            <li><a href="#" class="hover:text-white transition">Technical Training</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-6 text-lg heading-font">Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-envelope mt-1"></i>
+              <a href="mailto:christinenamatovu79@gmail.com" class="hover:text-white transition">christinenamatovu79@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-phone mt-1"></i>
+              <a href="tel:+256741474780" class="hover:text-white transition">+256 741 474 780</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt mt-1"></i>
+              <span>Kampala, Uganda</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500">
+        <p>&copy; <span id="current-year"></span> Namatovu Christine Maria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-4 rounded-full shadow-xl opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS - Replace with your actual User ID
+    emailjs.init('YOUR_EMAILJS_USER_ID');
+
+    // Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1000);
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+
+    // Typing Animation
+    const typingText = document.querySelector('.typing-animation');
+    const phrases = ["Senior Front-End Developer", "Software Engineer", "UI/UX Specialist", "Tech Innovator"];
+    let i = 0, j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    let isEnd = false;
+
+    function type() {
+      isEnd = false;
+      typingText.textContent = currentPhrase.join('');
+
+      if (i < phrases.length) {
+        if (!isDeleting && j <= phrases[i].length) {
+          currentPhrase.push(phrases[i][j]);
+          j++;
+          typingText.textContent = currentPhrase.join('');
+        }
+
+        if (isDeleting && j >= 0) {
+          currentPhrase.pop();
+          j--;
+          typingText.textContent = currentPhrase.join('');
+        }
+
+        if (j === phrases[i].length) {
+          isEnd = true;
+          isDeleting = true;
+        }
+
+        if (isDeleting && j === 0) {
+          currentPhrase = [];
+          isDeleting = false;
+          i++;
+          if (i === phrases.length) {
+            i = 0;
+          }
+        }
+      }
+      const spedUp = Math.random() * (70 - 40) + 40;
+      const normalSpeed = Math.random() * (250 - 150) + 150;
+      const time = isEnd ? 1500 : isDeleting ? spedUp : normalSpeed;
+      setTimeout(type, time);
+    }
+    type();
+
+    // Project Gallery Modal
+    document.querySelectorAll('.project-view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const project = JSON.parse(btn.dataset.project);
+        document.getElementById('modal-image').src = project.image;
+        document.getElementById('modal-title').textContent = project.title;
+        document.getElementById('modal-desc').textContent = project.description;
+        document.getElementById('modal-github').href = project.github;
+        document.getElementById('modal-live').href = project.liveDemo;
+        
+        document.getElementById('project-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('project-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Contact Form Submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const btnText = document.getElementById('submit-text');
+      const btnIcon = document.getElementById('submit-icon');
+      const loadingIcon = document.getElementById('loading-icon');
+      const alertBox = document.getElementById('form-alert');
+      
+      // Show loading state
+      btnText.textContent = 'Sending...';
+      btnIcon.classList.add('hidden');
+      loadingIcon.classList.remove('hidden');
+      
+      emailjs.sendForm('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', this)
+        .then(() => {
+          alertBox.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+          alertBox.classList.add('bg-green-100', 'text-green-700');
+          alertBox.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Message sent successfully! I\'ll get back to you soon.';
+          this.reset();
+        }, () => {
+          alertBox.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+          alertBox.classList.add('bg-red-100', 'text-red-700');
+          alertBox.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> Error sending message. Please try again or email me directly.';
+        })
+        .finally(() => {
+          btnText.textContent = 'Send Message';
+          btnIcon.classList.remove('hidden');
+          loadingIcon.classList.add('hidden');
+          
+          // Hide alert after 5 seconds
+          setTimeout(() => {
+            alertBox.classList.add('hidden');
+          }, 5000);
+        });
+    });
+
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
